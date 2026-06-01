@@ -99,6 +99,38 @@ select {
 /* Leaflet tiles can render with seams on dark bg; keep container clean. */
 .leaflet-container { background: #000; font-family: inherit; }
 
+.map-tools {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.map-tools .btn {
+  background: rgba(30, 33, 39, 0.92);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+.map-note {
+  background: rgba(30, 33, 39, 0.92);
+  color: #aaa;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+.map-note.err { color: #f66; }
+.map-note-x {
+  background: transparent;
+  border: none;
+  color: #aaa;
+  cursor: pointer;
+  font-size: 12px;
+  margin-left: 6px;
+  padding: 0;
+}
+.map-note-x:hover { color: #fff; }
+
 .align-banner {
   position: absolute;
   top: 10px;
@@ -115,3 +147,74 @@ select {
   max-width: 90%;
   text-align: center;
 }
+
+/* --- ride bar --- */
+.ridebar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+input[type="text"],
+input[type="number"] {
+  background: #2a2f38;
+  color: #e6e8eb;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+/* --- clip strip --- */
+.clipstrip { display: flex; flex-direction: column; gap: 10px; }
+.clipstrip-head { display: flex; align-items: center; gap: 10px; }
+
+.timeline {
+  position: relative;
+  height: 18px;
+  background: #11141a;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.tl-seg {
+  position: absolute;
+  top: 2px;
+  bottom: 2px;
+  background: #6b4a3a;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.tl-seg.active { background: var(--accent); }
+.tl-playhead {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #fff;
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.8);
+}
+
+.clip-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #2a2f38;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 5px 8px;
+  font-size: 12px;
+  cursor: pointer;
+}
+.chip.active { border-color: var(--accent); }
+.chip.warn { border-color: #c9533a; }
+.chip-label { max-width: 220px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.chip-range { color: #8b909a; }
+.chip-btn {
+  background: transparent;
+  border: none;
+  color: #aaa;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 0 2px;
+}
+.chip-btn:hover { color: #fff; }

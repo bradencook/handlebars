@@ -4,7 +4,51 @@
 // Only small header ranges are read via File.slice, so this stays cheap even
 // for multi-GB GoPro files (where `moov` may sit at the very end).
 
+import type { FileHandleLike } from "./db";
+
 const EPOCH_1904 = 2082844800; // seconds between 1904-01-01 and 1970-01-01 (UTC)
+
+export interface PickedVideo {
+  file: File;
+  /** Present on desktop Chrome/Edge — lets a saved clip auto-reopen later. */
+  handle: FileHandleLike | null;
+}
+
+/** True when the browser can persist a re-openable handle to a chosen file. */
+export function canUseFileHandles(): boolean {
+  return typeof (window as any).showOpenFilePicker === "function";
+}
+
+/**
+ * Pick a video via the File System Access API (so we get a persistable handle).
+ * Returns null if the API is unavailable (caller should fall back to <input>)
+ * or the user cancels.
+ */
+export async function pickVideoFile(): Promise<PickedVideo | null> {
+  const picker = (window as any).showOpenFilePicker;
+  if (typeof picker !== "function") return null;
+  try {
+    const [handle] = await picker.call(window, {
+      multiple: false,
+      types: [{ description: "Video", accept: { "video/*": [".mp4", ".mov", ".m4v", ".webm"] } }],
+    });
+    const file = await handle.getFile();
+    return { file, handle };
+  } catch {
+    return null; // user cancelled
+  }
+}
+
+/** Read a video's duration (seconds) without playing it. */
+export function readDuration(url: string): Promise<number | null> {
+  return new Promise((resolve) => {
+    const v = document.createElement("video");
+    v.preload = "metadata";
+    v.onloadedmetadata = () => resolve(Number.isFinite(v.duration) ? v.duration : null);
+    v.onerror = () => resolve(null);
+    v.src = url;
+  });
+}
 
 function atomType(dv: DataView, off: number): string {
   return String.fromCharCode(
