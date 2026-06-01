@@ -1,0 +1,13 @@
+{
+  "name": "handlebars",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Sync GPX ride data with MTB video footage by timestamp.",
+  "scripts": {
+    "postinstall": "npm --prefix web install",
+    "dev": "npm --prefix web run dev",
+    "dev:web": "npm --prefix web run dev",
+    "dev:server": "npm --prefix server install && npm --prefix server run dev",
+    "build": "npm --prefix web run build"
+  }
+}

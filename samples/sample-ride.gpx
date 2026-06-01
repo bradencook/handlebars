@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Handlebars sample" xmlns="http://www.topografix.com/GPX/1/1">
+  <trk>
+    <name>Sample descent</name>
+    <trkseg>
+      <trkpt lat="40.59010" lon="-111.63800"><ele>2380.0</ele><time>2026-05-30T15:00:00Z</time></trkpt>
+      <trkpt lat="40.59030" lon="-111.63850"><ele>2376.0</ele><time>2026-05-30T15:00:03Z</time></trkpt>
+      <trkpt lat="40.59055" lon="-111.63905"><ele>2371.0</ele><time>2026-05-30T15:00:06Z</time></trkpt>
+      <trkpt lat="40.59085" lon="-111.63950"><ele>2365.0</ele><time>2026-05-30T15:00:09Z</time></trkpt>
+      <trkpt lat="40.59120" lon="-111.63985"><ele>2358.0</ele><time>2026-05-30T15:00:12Z</time></trkpt>
+      <trkpt lat="40.59160" lon="-111.64010"><ele>2350.0</ele><time>2026-05-30T15:00:15Z</time></trkpt>
+      <trkpt lat="40.59205" lon="-111.64025"><ele>2341.0</ele><time>2026-05-30T15:00:18Z</time></trkpt>
+      <trkpt lat="40.59250" lon="-111.64030"><ele>2332.0</ele><time>2026-05-30T15:00:21Z</time></trkpt>
+      <trkpt lat="40.59298" lon="-111.64028"><ele>2322.0</ele><time>2026-05-30T15:00:24Z</time></trkpt>
+      <trkpt lat="40.59345" lon="-111.64015"><ele>2312.0</ele><time>2026-05-30T15:00:27Z</time></trkpt>
+      <trkpt lat="40.59390" lon="-111.63992"><ele>2301.0</ele><time>2026-05-30T15:00:30Z</time></trkpt>
+      <trkpt lat="40.59430" lon="-111.63960"><ele>2290.0</ele><time>2026-05-30T15:00:33Z</time></trkpt>
+      <trkpt lat="40.59465" lon="-111.63920"><ele>2279.0</ele><time>2026-05-30T15:00:36Z</time></trkpt>
+      <trkpt lat="40.59495" lon="-111.63872"><ele>2268.0</ele><time>2026-05-30T15:00:39Z</time></trkpt>
+      <trkpt lat="40.59520" lon="-111.63818"><ele>2257.0</ele><time>2026-05-30T15:00:42Z</time></trkpt>
+    </trkseg>
+  </trk>
+</gpx>
