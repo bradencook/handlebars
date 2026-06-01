@@ -81,4 +81,3 @@ The sync math lives in `web/src/lib/sync.ts` (pure, no React), GPX parsing in
 ## Notes
 
 - Satellite imagery is **Esri World Imagery** — free tiles, no API key.
-- Personal project — lives on my personal GitHub, not Bitbucket.
